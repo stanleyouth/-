@@ -1,5 +1,5 @@
-# -
-##    Scripts and sundries used in genome assembly and annotation
+# Title
+##    Scripts and sundries used in genome assembly and annotation
 ##    一些小功能的脚本实现
 ##### This repo includs scripts I typed during my research about genomics.
 ---------
