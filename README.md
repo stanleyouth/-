@@ -5,7 +5,7 @@
 ---------
 ---------
 ### N50.py
-This scripts is the first python I write, to implememt the length summary and statistics of a fasta file (genome).
+The first python script I write, to implememt the length summary and statistics of a fasta file (genome).
 <br>
 can be used like :
 ```bash
