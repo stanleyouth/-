@@ -34,7 +34,7 @@ This script calls small InDels from blast results and output a corrected results
 This scripts can also be used to generate a consensus sequence from multi similiar sequences.
 Properly alter blast2consensus.config before you run:
 ```bash
-sh blast2consensus.sh
+sh blast2consensus.sh <1|2|3|4>  ### 1,2,3,4 represents four steps of this script
 ```
 ---------
 ---------
