@@ -31,8 +31,8 @@ There are three steps.
 2. Mergeing synteny blocks. The rule is below and three involved threshold need to customerize in mcl_one_cluster.pl is descripted:<br>
 ![image](https://github.com/stanleyouth/-/blob/master/how_synteny_works.png)<br>
 a. sort original alignment blocks acoording to ref coordinates and then query coordinates.<br>
-b. merge blocks in a cluster if d and D is less than threshold [-dis_cutof].<br>
-c. if both ΣR and ΣQ of this cluster is larger than threshold [-cover_cutof], and number of alignments in this block (n) is larger than threshold [-cluster],then this whole cluster passes this filtering.<br>
+b. merge blocks in a cluster if d and D is smaller than threshold [-dis_cutof].<br>
+c. if both ΣR and ΣQ of this cluster is bigger than threshold [-cover_cutof], and number of alignments in this block (n) is bigger than threshold [-cluster],then this whole cluster passes this filtering.<br>
 3. Output a svg file which display these clusters in physical order. In this SVG.pl a parameter can be set to adjust canvas size. Genome size/parameter=canvas width or length in pixel.
 
 shell commands should run like this example. Please download involved perl scripts in this folder by hand.
