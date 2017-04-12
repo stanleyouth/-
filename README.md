@@ -32,7 +32,7 @@ There are three steps.
 a. sort original alignment blocks acoording to ref coordinates and then query coordinates.<br>
 b. merge blocks in a cluster if d and D is less than threshold .<br>
 c. if both ΣR and ΣQ of this cluster is larger than threshold , and number of alignments in this block (n) is larger than threshold ,then this whole cluster passes this filtering.<br>
-3. Output a svg file which display these clusters in physical order.
+3. Output a svg file which display these clusters in physical order. In this SVG.pl a parameter can be set to adjust canvas size. Genome size/parameter=canvas width or length in pixel.
 ``` 
 ``` 
 ----------
