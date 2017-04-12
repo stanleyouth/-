@@ -22,7 +22,19 @@ This pipe require a usable MUMmer and works in this order:
     perl delta2list.pl prefix.delta ref.size query.size > ref_query.list
     perl mcl_one_cluster.pl ref_query.list > ref_query.list.mcl
     perl cat_pseudochromosome.pl ref_query.list.mcl ref.size query improoved.results
-```    
+```   
+----------
+----------
+### synteny block screening.
+There are three steps.
+1. Mapping Query genome to reference genome using nucmer in MUMmer package, and extract information from DELTA format outputs.<br>
+2. Mergeing synteny blocks. The rule is below and three involved threshold need to customerize in mcl_one_cluster.pl is descripted:<br> 
+a. sort original alignment blocks acoording to ref coordinates and then query coordinates.
+b. merge blocks in a cluster if d and D is less than threshold .
+c. if both ΣR and ΣQ of this cluster is larger than threshold , and number of alignments in this block (n) is larger than threshold ,then this whole cluster passes this filtering.
+3. Output a svg file which display these clusters in physical order.
+``` 
+``` 
 ----------
 ----------
 ### Correct small InDels in a genome, using cDNA, clean reads in fastq format or reliable contigs assembled using NGS data
