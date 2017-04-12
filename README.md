@@ -34,8 +34,25 @@ a. sort original alignment blocks acoording to ref coordinates and then query co
 b. merge blocks in a cluster if d and D is less than threshold .<br>
 c. if both ΣR and ΣQ of this cluster is larger than threshold , and number of alignments in this block (n) is larger than threshold ,then this whole cluster passes this filtering.<br>
 3. Output a svg file which display these clusters in physical order. In this SVG.pl a parameter can be set to adjust canvas size. Genome size/parameter=canvas width or length in pixel.
+
+shell commands should run like this example. Please download involved perl scripts in this folder by hand.
+
 ``` 
+## mapping, make sure you have nucmer ready to go.
+nucmer  -c 100 -p prefix   ref_genome   query_genome
+perl delta2list.pl  prefix.delta ref.size query.size >  ref_query.list
+
+
+## merge cluster and filtering
+perl  mcl_one_cluster.pl   [options]   ref_query.list  > ref_query.list.mcl
+
+
+## sort according to coordinates and draw SVG.
+perl  order.pl  ref_query.list.mcl  ref.size  query.size   > ref_query.list.mcl.order
+perl  SVG.pl  ref_query.list  ref.size  ref_query.list.mcl.order  ref_query.list.mcl.svg  50000
+
 ``` 
+
 ----------
 ----------
 ### Correct small InDels in a genome, using cDNA, clean reads in fastq format or reliable contigs assembled using NGS data
