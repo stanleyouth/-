@@ -28,7 +28,7 @@ This pipe require a usable MUMmer and works in this order:
 ### synteny block screening.
 There are three steps.
 1. Mapping Query genome to reference genome using nucmer in MUMmer package, and extract information from DELTA format outputs.<br>
-2. Mergeing synteny blocks. The rule is below and three involved threshold need to customerize in mcl_one_cluster.pl is descripted:<br>
+2. Mergeing synteny blocks. The rule is below and three involved threshold need to be customerized in mcl_one_cluster.pl is descripted:<br>
 ![image](https://github.com/stanleyouth/-/blob/master/how_synteny_works.png)<br>
 a. sort original alignment blocks acoording to ref coordinates and then query coordinates.<br>
 b. merge blocks in a cluster if d and D is smaller than threshold [-dis_cutof].<br>
