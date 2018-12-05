@@ -70,7 +70,7 @@ sh blast2consensus.sh <1|2|3|4>  ### 1,2,3,4 represents four steps of this scrip
 ----------
 ----------
 ### design sgRNAs for a specific sequence with reference genome available
-This scripts lists candidate sgRNAs. Further selection is needed to shorten the list, according to GC content and other restrictions. An example is given below, _sg_RNA_length_ is the length of sgRNA, while _query_ and _genome_ is the interested gene sequence and the reference genome sequence respectively. A file _named query_sg_RNA_length.sg_RNA.targs_ will be generated, restoring all possible sgRNAs.
+This scripts lists candidate sgRNAs. Further selection is needed to shorten the list, according to GC content and other restrictions. An example is given below, _sg_RNA_length_ is the length of sgRNA, while _query_ and _genome_ is the interested gene sequence and the reference genome sequence respectively. A file named _query_sg_RNA_length.sg_RNA.targs_ will be generated, restoring all possible sgRNAs.
 ```bash
 perl  crispr.sgRNA.finder.pl  query    genome    sg_RNA_length
 ```
