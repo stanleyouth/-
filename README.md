@@ -1,4 +1,4 @@
-# Title
+
 ##    Scripts
 
 ---------
@@ -14,7 +14,7 @@ python N50.py fasta [10|20|30..|90]   ## if the last argument is missing, then a
 ---------
 ### Pseudochromosome assembly or scaffold length improove with a reference
 Pseudochromosome assembly with a chromosome-level genome reference of a very close related species.<br> 
-This pipeline is based a pipeline which graphically display the synteny between two genomes. I went one step further to improove the genome whose average length is shorter according the genome whose is longer.<br>
+This pipeline is based a pipeline which graphically display the homogenicity between two genomes. I went one step further to improove the genome whose average length is shorter according the genome whose is longer.<br>
 This pipe require a usable MUMmer and works in this order:
 ```bash
     nucmer -p  prefix ref query   ### ref and query represents two genome sequnce files, the only two oringal inputs
@@ -24,10 +24,10 @@ This pipe require a usable MUMmer and works in this order:
 ```   
 ----------
 ----------
-### synteny block screening.
+### homologous block screening.
 There are three steps.
 1. Mapping Query genome to reference genome using nucmer in MUMmer package, and extract information from DELTA format outputs.<br>
-2. Mergeing synteny blocks. The rule is below and three involved threshold need to be customerized in mcl_one_cluster.pl is descripted:<br>
+2. Mergeing homologous blocks. The rule is below and three involved threshold need to be customerized in mcl_one_cluster.pl is descripted:<br>
 ![image](https://github.com/stanleyouth/-/blob/master/how_synteny_works.png)<br>
 a. sort original alignment blocks acoording to ref coordinates and then query coordinates.<br>
 b. merge blocks in a cluster if d and D is smaller than threshold [-dis_cutof].<br>
@@ -65,6 +65,17 @@ Properly alter blast2consensus.config before you run:
 ```bash
 sh blast2consensus.sh <1|2|3|4>  ### 1,2,3,4 represents four steps of this script
 ```
+
+
+----------
+----------
+### design sgRNAs for a specific sequence with reference genome available
+This scripts lists candidate sgRNAs. Further selection is needed to shorten the list, according to GC content and other restrictions. An example is given below, 23 is the length of sgRNA, while query.fa and genome.fa is the interested gene sequence and the reference genome sequence respectively.
+```bash
+perl  crispr.sgRNA.finder.pl  query.fa    genome.fa    23
+```
+
+
 ---------
 ---------
 ### will be more
